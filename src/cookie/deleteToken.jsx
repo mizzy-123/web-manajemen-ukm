@@ -2,6 +2,6 @@
 
 import { cookies } from "next/headers";
 
-export default async function saveToken() {
+export default async function deleteToken() {
   cookies().delete("token");
 }

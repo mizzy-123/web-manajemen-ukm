@@ -45,7 +45,7 @@ export default function LoginForm() {
         <div className="form-group">
           <div className="form-label-group">
             <label className="form-label" htmlFor="email-address">
-              Email or Username
+              Email or NIM
             </label>
             <a className="link link-primary link-sm" tabIndex="-1" href="#">
               Need Help?

@@ -5,23 +5,20 @@ import Sidebar from "@/components/dashboard/sidebar";
 import Header from "@/components/dashboard/header";
 import { useEffect, useState } from "react";
 
-export default function MainLayoutDashboard({ children }) {
-  const [role, setRole] = useState(1);
-  useEffect(() => {
-    console.log("role:", role);
-  }, [role]);
+export default function MainLayoutDashboard({ children, token }) {
+  const [role, setRole] = useState(0);
   return (
     <>
       <div className="nk-app-root">
         {/* <!-- main @s --> */}
         <div className="nk-main ">
           {/* <!-- sidebar @s --> */}
-          <Sidebar />
+          <Sidebar role={role} />
           {/* <!-- sidebar @e --> */}
           {/* <!-- wrap @s --> */}
           <div className="nk-wrap ">
             {/* <!-- main header @s --> */}
-            <Header onSelect={(r) => setRole(r)} />
+            <Header role={role} token={token} onSelect={(r) => setRole(r)} />
             {/* <!-- main header @e --> */}
             {/* <!-- content @s --> */}
             {children}
